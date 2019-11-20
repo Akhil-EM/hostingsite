@@ -57,12 +57,12 @@ function router(nav) {
                  {
                      
                      /////writeing in a json
-                     res.json({"status":"success"})
+                     res.json({"status":error})
                      
                  }
                  else
                  {
-                    res.json({"status":error})
+                    res.json({"status":"success"})
                  }
              });
              
