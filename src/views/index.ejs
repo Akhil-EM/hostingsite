@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Library</title>
+</head>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/mystyle.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<body>
+    <div class="bodydiv">
+        <nav class="navbarcustom navbar navbar-expand-sm  navbar-dark navbarcustom">
+            <div class=" li-text">
+                <ul class="nav navbar-nav li-text">
+                    <% for(var i=0;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].link%>" class="li-text">
+                                <%=nav[i].tittle%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+            </div>
+        </nav>
+        <div class="divUnderNav">
+            <h1 class="content-tittle">
+                <%=tittle%>
+            </h1>
+        </div>
+        <div class="datadiv">
+            <div class="card-content">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="/imagesAndIcons/images/user1.jpg" class="rounded-circle" alt="can't load image" width="150vw" height="150vh">
+                        </td>
+                        <td>
+                            <p class="book-head">Repurpose Content to Reach a Wider Audience</p>
+                            <p class="web-tittle">97thfloor.com</p>
+                            <div>
+                                <p class="para-style">2 hours ago . <a href="#">Read more</a></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-content">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="/imagesAndIcons/images/user2.png" class="rounded-circle" alt="can't load image" width="150vw" height="150vh">
+                        </td>
+                        <td>
+                            <p class="book-head">Repurpose Content to Reach a Wider Audience</p>
+                            <p class="web-tittle">97thfloor.com</p>
+                            <div>
+                                <p class="para-style">2 hours ago . <a href="#">Read more</a></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-content">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="/imagesAndIcons/images/user1.jpg" class="rounded-circle" alt="can't load image" width="150vw" height="150vh">
+                        </td>
+                        <td>
+                            <p class="book-head">Repurpose Content to Reach a Wider Audience</p>
+                            <p class="web-tittle">97thfloor.com</p>
+                            <div>
+                                <p class="para-style">2 hours ago . <a href="#">Read more</a></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+</body>
+
+</html>

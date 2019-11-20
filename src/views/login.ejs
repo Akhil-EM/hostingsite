@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/mystyle.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
+
+</head>
+
+<body>
+    <div class="bodydiv">
+        <nav class="navbarcustom navbar navbar-expand-sm  navbar-dark navbarcustom">
+            <div class=" li-text">
+                <ul class="nav navbar-nav li-text">
+                    <% for(var i=0;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].link%>" class="li-text">
+                                <%=nav[i].tittle%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+            </div>
+        </nav>
+        <div class="divUnderNav">
+            <h1 class="content-tittle">
+                <%=tittle%>
+            </h1>
+        </div>
+
+        <div class="bookcontiner" id="card-cont">
+            <div class="colorback">
+                <h2 class="logtext">Please login....</h2><br>
+                <form action="/action_page.php">
+                    <div class="form-group">
+                        <label for="username" class="formlab">username/email:</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username/email" name="username" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="formlab">password:</label>
+                        <input type="password" class="form-control" id="password" requried placeholder="Enter password" name="password" required>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-link logtext"><a href="sign-up.html">Not a user ? create account.</a></button>
+                    <br>
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block buttonwidth" name="login" id="login">Login</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

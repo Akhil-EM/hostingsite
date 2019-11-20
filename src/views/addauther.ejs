@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Library</title>
+</head>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/mystyle.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<body>
+    <div class="bodydiv">
+        <nav class="navbarcustom navbar navbar-expand-sm  navbar-dark navbarcustom">
+            <div class=" li-text">
+                <ul class="nav navbar-nav li-text">
+                    <% for(var i=0;i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].link%>" class="li-text">
+                                <%=nav[i].tittle%>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+            </div>
+        </nav>
+        <div class="divUnderNav">
+            <h1 class="content-tittle">
+                <%=tittle%>
+            </h1>
+        </div>
+        <div class="bookcontiner" id="card-cont">
+            <form action="/authers/save" method="POST" name="addbookform">
+
+                <div class="form-group">
+                    <label for="bookname" class="formlab">Auther Name</label>
+                    <input type="text" class="form-control" id="authername" placeholder="Name" name="authername"  required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="author" class="formlab">Date Of Birth</label>
+                    <input type="date" class="form-control" id="dob" placeholder="author" name="bob"  required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="genere" class="formlab">Short discription</label>
+                    <input type="textarea" class="form-control" id="discription" placeholder="discription" name="discription" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="username" class="formlab">awards</label>
+                    <input type="text" class="form-control" id="awards" placeholder="awards" name="awards" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="username" class="formlab">major books</label>
+                    <input type="text" class="form-control" id="mbooks" placeholder="mbooks" name="mbooks" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="username" class="formlab">Image</label>
+                    <input type="text" class="form-control" id="image" placeholder="image" name="image" id="image" required>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-secondary btn-lg btn-block buttonwidth" name="login" id="login">Add</button>
+                <br>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
