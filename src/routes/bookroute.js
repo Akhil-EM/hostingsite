@@ -62,7 +62,7 @@ function router(nav) {
                  }
                  else
                  {
-                    res.json({"status":"failed"})
+                    res.json({"status":error})
                  }
              });
              
