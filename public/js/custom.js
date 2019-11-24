@@ -5,7 +5,7 @@ function alertshow() {
 }
 
 function validate_user(form) {
-
+    alert("fhgjhgfjhgfjh");
     var name_len = form.name.value.length;
     var emailreg = /\S+@\S+\.\S+/;
     var passreg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
