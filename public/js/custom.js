@@ -16,7 +16,7 @@ function validate_user(form) {
     var cpass = form.Cpassword.value;
     var email = form.email.value;
     var pno = form.phone.value;
-        alert(dob+" "+pass+" "+cpass+" "+email+" "+pno);
+        alert("datas "+dob+" "+pass+" "+cpass+" "+email+" "+pno);
     if (passreg.test(pass) == false) {
         alert("password must meet minimum requrements specified");
     } else if (pass != cpass) {
