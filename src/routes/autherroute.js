@@ -1,6 +1,6 @@
 const express = require('express');
 
-var authers = [
+var authers1 = [
 
     {
         name: "M. T. Vasudevan Nair",
@@ -64,14 +64,14 @@ var authers = [
         img: "vykyam-muhammad-basheer.jpg"
     },
 ];
-
+  var authors;
 var autherrouter = express.Router();
-
+var {AddauthorModel}=require('../models/AddAuthor');
 function router(nav) {
-    autherrouter.route('/').
-    get((req, res) => {
-        res.render('authers', { nav, tittle: "Authors", authers })
-    });
+    // autherrouter.route('/').
+    // get((req, res) => {
+    //     res.render('authers', { nav, tittle: "Authors", authers })
+    // });
     autherrouter.route('/addauther').get(
         (req, res) => {
             res.render(
@@ -81,14 +81,44 @@ function router(nav) {
                 }
             )
         });
-        autherrouter.route('/save').get(
+
+        autherrouter.route('/').get(
             (req, res) => {
-                res.render(
-                    'addauther', {
-                        nav,
-                        tittle: "Add Auther"
+                AddauthorModel.find((err,data)=>{
+                    if(err)
+                    {
+                      res.send("error happented")  
                     }
-                )
+                    else{
+                         authors=data;
+                        res.render(
+                            'authers', {
+                                nav,
+                                tittle: "Books",
+                                authors
+                            }
+                        ) 
+                    }
+         })  
+    
+            });
+        autherrouter.route('/save').post(
+            (req, res) => {
+                var books=new AddauthorModel(req.body);
+                 books.save((error,data)=>{
+                     if(error)
+                     {
+                         
+                         /////writeing in a json
+                         res.json({"status":error})
+                         
+                     }
+                     else
+                     {
+                        res.json({"status":"success"})
+                     }
+                 });
+                 
             });
     autherrouter.route('/:id')
         .get((req, res) => {
@@ -96,7 +126,7 @@ function router(nav) {
             res.render('auther', {
                 nav,
                 tittle: "Auther",
-                auther: authers[id]
+                auther: authors[id]
             });
         });
        

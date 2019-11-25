@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/mystyle.css">
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/custom.js"></script>
+    
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
         </div>
         <div class="signupcontiner">
             <h2 class="logtext">Signup to continue....</h2><br>
-            <form action="#" methoe="POST" onsubmit="return validate_user(this)">
+            <form action="/signup/save" method="POST" onsubmit="return validate_user(this)" name="myform">
                 <div class="form-group">
                     <label for="name" class="formlab">Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter firstname" name="name" required>
@@ -47,22 +48,22 @@
 
                 <div class="form-group">
                     <label for="lastname" class="formlab">Confirm password:</label>
-                    <input type="password" class="form-control" id="Cpassword" placeholder="Confirm password" name="Cpassword" onfocusout="pvalidate()" required>
+                    <input type="password" class="form-control" id="Cpassword" placeholder="Confirm password" name="Cpassword"  required>
                 </div>
                 <div class="form-group">
                     <label for="email" class="formlab">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" onfocusout="email_onfocus_out()" required>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"  required>
                 </div>
                 <div class="form-group ">
                     <label for="example-date-input" class="col-2 col-form-label formlab">Date of birth :</label>
                     <div class="col-10">
-                        <input class="form-control" type="date" name="dob" id="example-date-input" onfocusout="dob_onfocus_out()" required>
+                        <input class="form-control" type="date" name="dob" id="dob"  required>
                     </div>
                     </br>
                     <div class="form-check-label">
                         <label for="gender" class="formlab">Gender:</label><br> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="male" value="male" checked><label class="formlab">&nbspmale</label>&nbsp&nbsp&nbsp&nbsp
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="female" value="female"><label class="formlab">&nbspfemale</label>
+                        <input type="radio" class="form-check-input" name="genderradio" id="male" value="male" checked><label class="formlab">&nbspmale</label>&nbsp&nbsp&nbsp&nbsp
+                        <input type="radio" class="form-check-input" name="genderradio" id="female" value="female"><label class="formlab">&nbspfemale</label>
 
                     </div>
                     <div class="form-group">
@@ -72,9 +73,10 @@
                     <br>
                     <center>Accept terms and conditions &nbsp;&nbsp;<input type="checkbox" name="accept" required></center>
                     <br>
-                    <button type="submit" name="submt" id="submit" class="btn btn-secondary btn-lg btn-block buttonwidth">Register user</button>
+                    <!-- <button type="submit" name="submt" id="submit" class="btn btn-secondary btn-lg btn-block buttonwidth">Register user</button> -->
+                    <input type="submit" name="submt" id="submit" class="btn btn-secondary btn-lg btn-block buttonwidth" value="Register"/>
             </form>
-
+               
 
             </div>
 </body>

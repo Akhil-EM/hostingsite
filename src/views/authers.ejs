@@ -33,33 +33,35 @@
             </h1>
         </div>
         <div class="datadiv">
-            <%for(var i=0;i<authers.length;i++){%>
+            <%console.log(authors)%>
+            <%for(var i=0;i<authors.length;i++){%>
+                
                 <div class="card-content-auth">
                     <table>
                         <center>
                             <p class="book-head">
-                                <%=authers[i].name%>
+                                <%=authors[i].name%>
                             </p>
                         </center>
                         <tr>
-                            <img src="/imagesAndIcons/authers/<%=authers[i].img%>" class="autherimage" alt="Can't load image" width="25%" height="45%">
+                            <img src="/imagesAndIcons/authers/<%=authors[i].imge%>" class="autherimage" alt="Can't load image" width="25%" height="45%">
                         </tr>
                         <tr>
                             <td>
 
                                 <p class="web-tittle">
-                                    <%=authers[i].dob%>
+                                    Date Of Birth:<%=authors[i].dob%>
                                 </p>
                                 <div>
                                     <p class="para-style">
-                                        <%=authers[i].disc%>
+                                        About:<%=authors[i].discription%>
                                     </p>
                                 </div>
                                 <p class="web-tittle">
-                                    <%=authers[i].books%>
+                                    Books:<%=authors[i].majworks%>
                                 </p>
                                 <p class="web-tittle">
-                                    <%=authers[i].awards%>
+                                    Awards:<%=authors[i].awards%>
                                 </p>
                                 <div>
                                     <p class="para-style"><a href="/authers/<%=i%>">Read more</a></p>

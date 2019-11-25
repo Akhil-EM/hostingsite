@@ -55,8 +55,8 @@ var app = new express();
 
 const bookrouter = require('./src/routes/bookroute')(nav);
 const autherroute = require('./src/routes/autherroute')(nav);
-const singnuproutr = require('./src/routes/loginroute')(nav);
-const loginrouter = require('./src/routes/signup')(nav);
+const singnuproutr = require('./src/routes/signup')(nav);
+const loginrouter = require('./src/routes/loginroute')(nav);
 app.use(bodyparser.json());
 app.use(cors())
 app.use(bodyparser.urlencoded({ extented: true })); /////to get value of form data
@@ -68,8 +68,8 @@ mongoose.connect("mongodb+srv://akhilem:9539770998@cluster0-rmbxp.mongodb.net/te
 
 ////mongoose.connect("mongodb://localhost:27017/LibraryApp");/// local mongo db connection
 app.use('/addbook', bookrouter);
-app.use('/login', singnuproutr)
-app.use('/signup', loginrouter);
+app.use('/login', loginrouter);
+app.use('/signup', singnuproutr);
 app.get('/', function(res, res) {
     res.render('index', {
         nav: nav,
@@ -81,12 +81,12 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-////set port 
-// app.listen(2020, function() {
-//     console.log(chalk.yellowBright(`port ${chalk.redBright("2020")} is active`));
-// });
+//set port 
+app.listen(2020, function() {
+    console.log(chalk.yellowBright(`port ${chalk.redBright("2020")} is active`));
+});
 
 ////setting a dynamic coding
-app.listen(process.env.PORT||3000,()=>{
-    console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
-});
+// app.listen(process.env.PORT||3000,()=>{
+//     console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
+// });

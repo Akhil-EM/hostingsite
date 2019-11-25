@@ -5,14 +5,17 @@ function alertshow() {
 }
 
 function validate_user(form) {
-    alert("in validate methode");
+    alert("in validate method");
+    console.log(form);
     var name_len = form.name.value.length;
     var emailreg = /\S+@\S+\.\S+/;
     var passreg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     var d = new Date();
     var n = d.getFullYear();
-    alert("in validate second");
-    var dob = form.dob.value.substring(0, 4);
+    
+    var dob = document.getElementById("example-date-input").value.substring(0, 4);;
+    alert(" in validate second "+dob);
+   // 
     var pass = form.password.value;
     var cpass = form.Cpassword.value;
     var email = form.email.value;
