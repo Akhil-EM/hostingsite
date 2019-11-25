@@ -33,7 +33,8 @@
             </h1>
         </div>
 
-        <div class="bookcontiner" id="card-cont">
+        <div class="bookcontiner-book" id="card-cont">
+            <center>
             <h1>Name:
                 <%=book.bookname%>
             </h1>
@@ -43,7 +44,23 @@
             </h3>
             <h4>Genere:
                 <%=book.genere%>
-            </h4><br>           
+            </h4><br> 
+            <div class="butt-div">
+                
+                <form  id="button_form-delete" action="/books/edit" method="POST" name="edit">
+                    <input type="hidden" id="custId" name="id" value="<%=book._id%>">
+                    <input type="submit" class="buttonwidth-new1 btn btn-dark" value="Edit">
+                    
+                </form>
+                <form id="button_form-delete" action="/books/delete" method="POST" name="delete">
+                    <input type="hidden" id="custId" name="id" value="<%=book._id%>">
+                    <input type="submit" class="buttonwidth-new2 btn btn-dark" value="Delete">
+                </form>  
+            </div>
+            </center>
+                
+            </div>  
+                  
         </div>
 
     </div>

@@ -22,6 +22,7 @@ function router(nav) {
                         }
                     ) 
                 }
+                //res.send(data)
      })  
 
         });
@@ -67,18 +68,95 @@ function router(nav) {
              });
              
         });
-
-
-
-    booksrouter.route('/:id')
-        .get((req, res) => {
-            const id = req.params.id;
-            res.render('book', {
-                nav,
-                tittle: "books",
-                book: books[id]
+        booksrouter.route('/read').post(
+            (req, res) => {
+                  var bodydata=req.body;
+                  //res.send(data);
+                  AddBookModel.findOne({_id:bodydata.id},(err,data)=>{
+                    if(err)
+                    {
+                        res.json({"status":"Failed"});
+                    }
+                    else if(data.n==0){
+                        res.json({status:"No match found"});
+                    }
+                    else{
+                        //res.json({status:data});
+                        res.render('book', {
+                            nav,
+                            tittle: "books",
+                            book:data
+                        });
+                    }
+                  })
+                
             });
-        });
+            booksrouter.route('/delete')
+            .post((req,res)=>{
+                var bodydata=req.body;
+                AddBookModel.deleteOne({_id:bodydata.id},(err,data)=>{
+                    if(err)
+                    {
+                        res.json({status:"Failed"});
+                    }
+                    else if(data.n==0){
+                        res.json({status:"No match found"});
+                    }
+                    else{
+                        res.json({status:"Success"});
+                    }
+                })
+            });
+            booksrouter.route('/edit').post(
+                (req, res) => {
+                      var bodydata=req.body;
+                      //res.send(data);
+                      AddBookModel.findOne({_id:bodydata.id},(err,data)=>{
+                        if(err)
+                        {
+                            res.json({"status":"Failed"});
+                        }
+                        else if(data.n==0){
+                            res.json({status:"No match found"});
+                        }
+                        else{
+                            //res.json({status:data});
+                            res.render('editbook', {
+                                nav,
+                                tittle: "books",
+                                book:data
+                            });
+                        }
+                      })
+                    
+                });
+                booksrouter.route('/edit-single-book')
+                .post((req,res)=>{
+                    var bodydatas=req.body;
+                    AddBookModel.updateOne({_id:bodydatas.id},{$set:bodydatas},(err,data)=>{
+                        if(err)
+                        {
+                            res.json({"status":"Failed"});
+                        }
+                        else if(data.n==0){
+                            res.json({status:"No match found"});
+                        }
+                        else{
+                            res.json({status:"Success"});
+                        }
+                    })
+                });
+/////using id methode
+    // booksrouter.route('/:id')
+    //     .get((req, res) => {
+    //         const id = req.params.id;
+    //         res.render('book', {
+    //             nav,
+    //             tittle: "books",
+    //             book: books[id]
+    //         });
+    //     });
+   
     return booksrouter;
 }
 

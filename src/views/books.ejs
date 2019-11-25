@@ -51,8 +51,12 @@
                                         <%=books[i].genere%>
                                     </p>
                                 </div>
+                                
                                 <div>
-                                    <p class="para-style"><a href="/books/<%=i%>">Read more</a></p>
+                                    <form name="button_form" action="/books/read" method="POST" name="readmore">
+                                        <input type="hidden" id="custId" name="id" value="<%=books[i]._id%>">
+                                          <input type="submit" name="submit" value="Readmore" class="btn btn-link btnstyle"/>
+                                    </form>
                                 </div>
                             </td>
                         </tr>

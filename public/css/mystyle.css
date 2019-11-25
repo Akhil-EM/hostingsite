@@ -251,3 +251,46 @@
     border-radius: 15px;
     padding: 5%;
 }
+.bookcontiner-book {
+    background-color: rgb(253, 253, 253);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -8%;
+    border-radius: 15px;
+    padding: 5%;
+}
+.butt-div{
+    display:block;
+}
+.buttonwidth-new1 {
+    width:auto;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    text-align: center;
+    border-color: none;
+    background-color: rgb(70, 221, 255);
+    color: rgb(255, 255, 255);
+    margin-left:30%;
+    margin-right:25%;
+    margin-bottom:2%;
+}
+.buttonwidth-new2{
+    width:auto;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    text-align: center;
+    border-color: none;
+    background-color: rgb(70, 221, 255);
+    color: rgb(255, 255, 255);
+    margin-bottom:2%;
+}
+.btnstyle{
+    font-weight:bold;
+    font-size:1em;
+}

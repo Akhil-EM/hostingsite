@@ -82,11 +82,11 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 //set port 
-app.listen(2020, function() {
-    console.log(chalk.yellowBright(`port ${chalk.redBright("2020")} is active`));
-});
+// app.listen(2020, function() {
+//     console.log(chalk.yellowBright(`port ${chalk.redBright("2020")} is active`));
+// });
 
 ////setting a dynamic coding
-// app.listen(process.env.PORT||3000,()=>{
-//     console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
-// });
+app.listen(process.env.PORT||3000,()=>{
+    console.log(chalk.yellowBright(`port ${chalk.redBright(process.env.PORT)} is active`))
+});

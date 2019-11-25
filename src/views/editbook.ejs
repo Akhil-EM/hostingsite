@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-Library</title>
+    <title>Edit book</title>
 </head>
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/mystyle.css">
@@ -33,28 +33,29 @@
             </h1>
         </div>
         <div class="bookcontiner" id="card-cont">
-            <form action="/books/save" method="POST" name="addbookform">
+            <form action="/books/edit-single-book" method="POST" name="addbookform">
 
                 <div class="form-group">
                     <label for="bookname" class="formlab">Book name</label>
-                    <input type="text" class="form-control" id="bookname"  placeholder="bookname" name="bookname" id="bookname" required>
+                    <input type="text" class="form-control" id="bookname" value="<%=book.bookname%>" placeholder="bookname" name="bookname" id="bookname" required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="author" class="formlab">Author</label>
-                    <input type="text" class="form-control" id="author" placeholder="author" name="author" id="author" required>
+                    <input type="text" class="form-control" id="author" value="<%=book.author%>" placeholder="author" name="author" id="author" required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="genere" class="formlab">Genere</label>
-                    <input type="text" class="form-control" id="genere" placeholder="genere" name="genere" id="genere" required>
+                    <input type="text" class="form-control" id="genere" value="<%=book.genere%>" placeholder="genere" name="genere" id="genere" required>
                 </div>
                 <div class="form-group">
                     <label for="username" class="formlab">Image</label>
-                    <input type="text" class="form-control" id="image" placeholder="image" name="image" id="image" required>
+                    <input type="text" class="form-control" id="image" value="<%=book.image%>" placeholder="image" name="image" id="image" required>
+                    <input type="hidden" id="custId" name="id" value="<%=book._id%>">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-secondary btn-lg btn-block buttonwidth" name="login" id="login">Add</button>
+                <button type="submit" class="btn btn-secondary btn-lg btn-block buttonwidth" name="login" id="login">Edit</button>
                 <br>
             </form>
         </div>

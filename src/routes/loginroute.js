@@ -10,8 +10,8 @@ function router(nav) {
 
     loginroute.route('/save')
     .post((req,res)=>{
-
-            signupModel.findOne({email:req.body.username, email:req.body.password},(err,data)=>{
+                 var bodydata=req.body
+            signupModel.findOne({email:bodydata.username, password:bodydata.password},(err,data)=>{
                 if(err){
                     res.json({status:"error"})
                     throw err;
@@ -22,6 +22,7 @@ function router(nav) {
                 else{
                     res.json({status:"Success"})
                 }
+                //res.send(bodydata);
             });
     })
 
